@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Транзакции";
+}
+
+<div ng-controller="transactionController" ng-init="initializeController()">
+    <br />
+    <br />
+    <h2>@ViewBag.Title.</h2>
+    <br>
+    <h5>Журнал транзакций</h5>
+    <hr />
+    <br />
+    <table class="list-table">
+        <thead>
+            <tr>
+                <td>
+                    Id
+                    <p> <input ng-model="fId" style="width: 90%;align-content:center" ng-change="selectSortButton(fId,'Id')">
+                    <p>
+                        <button class="icon-button" ng-click="sortBy('Id')">
+                            <i class="mdi-content-sort"></i>
+                        </button>
+</td>
+                <td>
+                    NameDonor
+                    <p> <input ng-model="fNameDonor" style="width: 90%;align-content:center" ng-change="selectSortButton(fNameDonor,'NameDonor')">
+                    <p>
+                        <button class="icon-button" ng-click="sortBy('NameDonor')">
+                            <i class="mdi-content-sort"></i>
+                        </button>
+                </td>
+                <td>
+                    NameAcceptor
+                    <p> <input ng-model="fNameAcceptor" style="width: 90%;align-content:center" ng-change="selectSortButton(fNameAcceptor,'NameAcceptor')">
+                    <p>
+                        <button class="icon-button" ng-click="sortBy('NameAcceptor')">
+                            <i class="mdi-content-sort"></i>
+                        </button>
+                </td>
+                <td>
+                    Date
+                    <p> <input ng-model="fDate" style="width: 90%;align-content:center" ng-change="selectSortButton(fDate,'Date')">
+                    <p>
+                        <button class="icon-button" ng-click="sortBy('Date')">
+                            <i class="mdi-content-sort"></i>
+                        </button>
+                </td>
+                <td>
+                    Money
+                    <p> <input ng-model="fMoney" style="width: 90%;align-content:center" ng-change="selectSortButton(fMoney,'Money')">
+                    <p>
+                        <button class="icon-button" ng-click="sortBy('Money')">
+                            <i class="mdi-content-sort"></i>
+                        </button>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="TransactionWeb in TransactionWeb_ar | orderBy:propertyName:reverse" ng-click="SelectCheck(checkAccountWeb.Id)">
+                <td ng-bind="TransactionWeb.Id">==</td>
+                <td>{{TransactionWeb.NameDonor}}</td>
+                <td>{{TransactionWeb.NameAcceptor}}</td>
+                <td>{{FormatDateTime(TransactionWeb.Date)}}</td>
+                <td>{{TransactionWeb.Money}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

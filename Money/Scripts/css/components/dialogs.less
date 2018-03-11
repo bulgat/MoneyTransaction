@@ -1,0 +1,335 @@
+﻿
+@aside-padding: 0px;
+
+.aside-overlay {
+  z-index: @zindexModalBackdrop;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: #e5e5e5;   
+  opacity: 0.5;
+  -ms-filter:"alpha(opacity=50)";
+  .transition( all .3s ease);
+}
+
+.aside-overlay-modal {
+  z-index: @zindexModal + 5;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color:@grey-500;   
+  opacity: 0.5;
+  -ms-filter:"alpha(opacity=50)";
+  .transition( all .3s ease);
+}
+
+
+.aside-dialog {
+    background: #fff;
+    padding: @aside-padding;
+    height: ~"calc(100% - 65px)" !important; // 600px; //100%;
+    width:   300px;  // ~"calc(100% - 200px)";// @aside-width;
+    right: -(100% +  2*@aside-padding);
+    z-index: @zindexModal;
+    position: fixed;
+    top: 65px;
+    .transition(all .3s ease-in-out);
+
+    &.open {
+        right: 0px;
+        .cms-shadow-2dp;
+    }
+}
+
+
+
+
+
+
+.dialog-header {
+    padding: 16px 16px;
+   
+    height: 32px;
+    h3 {
+        margin: 0px;
+        line-height: 32px;
+        font-weight: normal;
+        /*margin: 0 16px 0 0;
+        padding: 0px;
+        font-weight: normal;
+        color: @navBackGround;
+        max-width: 210px;*/
+        float: left;
+    }
+}
+.dialog-body {
+    padding: 0 16px 0 16px;
+}
+
+.dialog-footer{
+    bottom: 0px;
+    background: #e1e1e1;
+    width: inherit;
+    padding: 0 16px 0 16px;
+}
+
+
+
+
+
+
+
+
+/*** MODAL WINDOWS  ***/
+.modal-dialog-confirm {
+    background: @white;
+    border-radius: @brd2;
+    min-height: 200px;
+    
+    max-height: 300px;
+    width: 400px;
+    z-index: 9999 !important;
+    margin-left: -250px;
+    left: 50%;
+    position: absolute;
+    top: -600px;
+    .transition(all .3s ease);
+
+     &.open {
+        top: 25%;
+        .cms-shadow-2dp;
+    }
+
+    
+    &.w400 {
+        width: 400px;
+        margin-left: -250px;
+    }
+
+    &.w600 {
+        width: 600px;
+        margin-left: -350px;
+    }
+
+     &.w800 {
+        width: 800px;
+         margin-left: -450px;
+    }
+      &.h200 {
+        min-height: 150px;  
+        max-height: 200px;
+        top: -800px;
+        &.open {
+            top: 20%;
+        }
+    }
+
+
+     &.h400 {
+        min-height: 300px;  
+        max-height: 400px;
+        top: -800px;
+        &.open {
+            top: 20%;
+        }
+    }
+
+      &.h500 {
+        min-height: 400px;  
+        max-height: 500px;
+        top: -800px;
+        &.open {
+            top: 15%;
+        }
+    }
+
+    &.full {
+        min-height: 600px;  
+        max-height: 1200px;
+        height: 100%;
+        width: 600px;
+        margin-left: -350px;
+        top: -1200px;
+        &.open {
+            top: 10%;
+        }
+        .modal-content-image {
+            width: auto;
+            min-height: 550px; 
+            height: 100%;
+            display: block;
+            max-width: 560px;
+            max-height: 600px;
+            img {
+                max-width: 540px; 
+                max-height: 590px;
+                margin: auto;
+                text-align: center;
+                display: block;
+            }
+        }
+
+    }
+    &.antiTop {
+        min-height: 600px;  
+        max-height: 1200px;
+        height: 100%;
+        width: 600px;
+        margin-left: -350px;
+        top: -1200px;
+        &.open {
+            top: 1%;
+        }
+    }
+   
+}
+
+
+/*** MODAL WINDOWS COPY  ***/
+/*
+.modal-dialog-confirm-service {
+    background: @white;
+    border-radius: @brd2;
+    min-height: 200px;
+    
+    max-height: 300px;
+    width: 400px;
+    z-index: 9999 !important;
+    margin-left: -250px;
+    left: 50%;
+    position: absolute;
+    top: -600px;
+    .transition(all .3s ease);
+
+     &.open {
+        top: 25%;
+        .cms-shadow-2dp;
+    }
+
+    
+    &.w400 {
+        width: 400px;
+        margin-left: -250px;
+    }
+
+    &.w600 {
+        width: 600px;
+        margin-left: -350px;
+    }
+
+     &.w800 {
+        width: 800px;
+         margin-left: -450px;
+    }
+      &.h200 {
+        min-height: 150px;  
+        max-height: 200px;
+        top: -800px;
+        &.open {
+            top: 20%;
+        }
+    }
+
+
+     &.h400 {
+        min-height: 300px;  
+        max-height: 400px;
+        top: -800px;
+        &.open {
+            top: 20%;
+        }
+    }
+
+      &.h500 {
+        min-height: 400px;  
+        max-height: 500px;
+        top: -800px;
+        &.open {
+            top: 15%;
+        }
+    }
+
+    &.full {
+        min-height: 600px;  
+        max-height: 1200px;
+        height: 100%;
+        width: 600px;
+        margin-left: -350px;
+        top: -1200px;
+        &.open {
+            top: 10%;
+        }
+        .modal-content-image {
+            width: auto;
+            min-height: 550px; 
+            height: 100%;
+            display: block;
+            max-width: 560px;
+            max-height: 600px;
+            img {
+                max-width: 540px; 
+                max-height: 590px;
+                margin: auto;
+                text-align: center;
+                display: block;
+            }
+        }
+
+    }
+    &.antiTop {
+        min-height: 600px;  
+        max-height: 1200px;
+        height: 100%;
+        width: 600px;
+        margin-left: -350px;
+        top: -1200px;
+        &.open {
+            top: 1%;
+        }
+    }
+   
+}
+*/
+.modal-header {
+    margin: 16px;
+   
+    height: 32px;
+    h3 {
+        margin: 0px;
+        line-height: 32px;
+        font-weight: normal;
+        float: left;
+    }
+}
+.modal-content {
+    margin: 0 16px 0 16px;
+    overflow-y: auto;
+}
+
+.modal-footer{
+    bottom: 0px;
+    padding: 16px 0;
+    margin: 0 16px;
+    position: absolute;
+    //border: 1px solid red;
+    right: 0;
+    button {
+        margin: 0 8px;
+        line-height: 22px;
+        .cms-shadow-none;
+        &:hover {
+            .cms-shadow-none;
+        }
+    }
+}
+

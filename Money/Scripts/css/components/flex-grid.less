@@ -1,0 +1,116 @@
+﻿@import (once) "flex";
+
+@gridCellBaseSize: 8.33333333%;
+
+.flex-grid {
+    display: block;
+    width: 100%;
+}
+
+.flex-grid {
+    .row {
+        .flexbox;
+    }
+}
+
+.flex-grid {
+
+    .row {
+        .cell {
+            .flex(0 0 @gridCellBaseSize);
+        }
+
+        &.cell-auto-size {
+            .cell {
+                .flex(1 1 auto);
+            }
+        }
+    }
+
+    .row {
+        .cell {
+
+            // colspan
+            .generate-colspan(12);
+            .generate-colspan(@j, @k: 2) when (@k =< @j){
+                &.colspan@{k} {
+                    .flex(0 0 @gridCellBaseSize * @k);
+                }
+                .generate-colspan(@j, (@k + 1));
+            }
+
+            // grow size
+            .generate-flex-size(12);
+            .generate-flex-size(@j, @k: 1) when (@k =< @j){
+                &.size@{k} {
+                    .flex(0 0 @gridCellBaseSize * @k);
+                }
+                .generate-flex-size(@j, (@k + 1));
+            }
+
+            // percent size
+            .generate-flex-size-p(100);
+            .generate-flex-size-p(@j, @k: 10) when (@k =< @j){
+                &.size-p@{k} {
+                    .flex(0 0 @k + 0%);
+                }
+                .generate-flex-size-p(@j, (@k + 10));
+            }
+
+            // pixels size
+            .generate-flex-size-x(1000);
+            .generate-flex-size-x(@j, @k: 100) when (@k =< @j){
+                &.size-x@{k} {
+                    .flex(0 0 @k + 0px);
+                }
+                .generate-flex-size-x(@j, (@k + 100));
+            }
+
+            &.auto-size {
+                .flex(1 auto);
+            }
+        }
+    }
+}
+
+
+
+
+.flex-container {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+        
+      -webkit-flex-flow: row wrap;
+      justify-content: space-around;
+
+      .flex-item {
+          padding: 0px;
+          margin-top: 15px;
+    }
+}
+
+/*.ie { 
+    &.flex-container {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          position: relative;
+	    width: 100%;
+       
+
+          .flex-item {
+              padding: 5px;
+              margin: 15px 10px 0 10px;
+              min-width: 180px;
+              position: relative;
+	          float: left;
+	          overflow: hidden;
+        }
+    }
+}*/

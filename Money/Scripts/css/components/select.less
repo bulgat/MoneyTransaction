@@ -1,0 +1,229 @@
+﻿@charset "UTF-8";
+
+
+//ВНЕШНИЕ ПЕРМЕННЫЕ
+@headerBackGround: #e4e4e4;
+
+
+//ВНУТРЕНИЕ ПЕРЕМЕЕНЫЕ 
+@borderColor: @headerBackGround;
+@mainColor: #808080;
+
+@min-heigh: 2.125rem;//1.765em;
+@padding: 0.265em;
+
+
+.sb-item a, .sb-item a:active, .sb-item a:hover, .sb-toggle, .sb-toggle:active, .sb-toggle:hover {
+    text-decoration: none;
+    outline: 0;
+}
+
+.sb-item a, .sb-toggle, .sb-add {
+    display: block;
+    font-size: 0.9em;
+    color: @mainColor;
+    padding: 0.265em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.sb-container {
+    display: inline-block;
+    vertical-align: middle;
+    width: 160px;
+    outline: 0;
+    position: relative;
+    text-align: left;
+    transition: all ease-in 0.2s;
+    min-height: @min-heigh;
+    &:hover {
+       //color: darken(@mainColor, 10%);
+    }
+}
+.sb-container a {
+    //Вот это влияет
+    padding: 6px;//0.5em;
+}
+
+
+.sb-container-multi .sb-item a:before {
+     /*font-family: @font-mdi;
+	 content: "\e7b4";
+     font-size: 1.5em;
+     color: @mainColor;
+     float: left;
+     padding-right: 6px;*/
+}
+
+.sb-container-multi .sb-item-active a:before {
+    //color: (@mainColor, 10%);
+    color: @mainColor;
+}
+
+.sb-toggle {
+    //border: 2px solid @borderColor;
+    //border-radius: 2px;
+    //border-bottom: 2px solid @borderColor;
+    position: relative;
+    transition: all ease-in 0.2s;
+    &:hover {
+        //border: 2px solid @mainColor;
+        //border-bottom: 2px solid @mainColor;
+         color: darken(@mainColor, 50%);
+    }
+}
+
+.sb-toggle:after {
+    font-family: @font-mdi;
+	content: "\e7b4";
+    font-size: 1.5em;
+    color: @mainColor;
+    float: right;
+}
+
+.sb-toggle-active:after {
+   //background: red !important;
+}
+
+.sb-toggle:focus {
+    /*border: 2px solid @borderColor;*/
+}
+
+.sb-dropdown {
+   background-color: #fff;
+    
+    position: absolute;
+    z-index: 100;
+    
+    top: 0px; //нет вержнего border
+    //top: -2px;
+    left: 0;
+    width: 100%;
+    max-width: 400px;
+    max-height: 220px;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    .cms-shadow-2dp;
+	 transition: all ease-in 0.3s;
+}
+
+.sb-dropdown::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+}
+
+.sb-dropdown::-webkit-scrollbar-track {
+   background-color: #fff;
+}
+
+.sb-dropdown::-webkit-scrollbar-thumb {
+    background: @borderColor;
+   //border-radius: 2px;
+}
+
+.sb-dropdown::-webkit-scrollbar-thumb:hover {
+    background: @mainColor;
+    //border-radius: 2px;
+}
+
+.sb-item {
+    padding: 0.265em;
+    transition: all ease-in 0.2s;
+}
+.sb-item:hover {
+    background: @borderColor;
+    cursor: pointer;
+
+}
+
+.sb-item-focus a, .sb-item:hover a {
+   // box-shadow: 0 0 0 1px #ccc inset;
+   // background: #e4e4e4;
+}
+
+/*.sb-item-active a {
+    //background-color: #fafafa;
+    color: #000;
+}*/
+
+.sb-item-active {
+    background: @borderColor;
+     a {
+         color: #000;
+     }
+    
+}
+
+.sb-item:not(:last-child) {
+    //border-bottom: 1px solid #ddd;
+}
+
+.sb-item.sb-empty {
+   padding: 10px;
+   font-size: 0.9em;
+   color: @mainColor;
+
+}
+
+
+/*** Multiselect ***/
+.i-select {
+    margin-top: 5px;
+}
+
+.sb-container-multi {
+    width: 100%;
+    
+}
+
+.sb-add {
+    position: relative;
+    left: 0;
+    transition: all ease-in 0.2s;
+    &:hover {
+        color: darken(@mainColor, 50%);
+    }
+}
+
+.sb-add:after {
+    padding-top: 2px;
+    font-family: @font-mdi;
+	content: "\e6fb";
+    //font-size: 1.5em;
+    float: left;
+}
+
+ .sb-chip {
+    cursor: default;
+    border-radius: 16px;
+    display: table-cell;
+    height: 26px;
+    margin: 2px 8px 2px 0;
+    padding: 2px 4px 0 8px;
+    float: left; 
+    background: #e0e0e0;
+    color: @fontColor;
+    font-family: @fontName;
+    font-size: @fontSize;
+    .sb-content {
+        display: block;
+        padding-right: 4px;
+        float: left;
+        white-space: nowrap; 
+        line-height: 22px;
+         font-size: @fontSize;
+    }
+    button {
+        padding: 0px 2px 0 0;     
+    }
+}

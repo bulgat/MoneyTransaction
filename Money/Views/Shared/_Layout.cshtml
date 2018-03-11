@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html  ng-app="app">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title – приложение ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Транзакции денег", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Главная", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Перевод денег", "About", "Home")</li>
+                    <li>@Html.ActionLink("Счета", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Транзакции", "Transaction", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year – Транзакции денег</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+
+    <script src="~/Scripts/app/services/reportService.js"></script>
+    <script src="~/Scripts/app/services/ajaxService.js"></script>
+    <script src="~/Scripts/app/services/utilService.js"></script>
+
+    <script src="~/Scripts/app/ctrls/transactionController.js"></script>
+    <script src="~/Scripts/app/ctrls/aboutController.js"></script>
+    <script src="~/Scripts/app/ctrls/contactController.js"></script>
+    <script src="~/Scripts/app/ctrls/indexController.js"></script>
+
+    <script src="~/Scripts/app/app.js"></script>
+    <!---->
+    <link href="~/Scripts/css/cms.less" rel="stylesheet" />
+</body>
+</html>

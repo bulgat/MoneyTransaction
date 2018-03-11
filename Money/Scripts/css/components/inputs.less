@@ -1,0 +1,305 @@
+﻿@min-heigh: 2.125rem;//1.765em;
+@padding: 0.265em;
+
+
+.input-control {
+	display: inline-block;
+	min-height: @min-heigh; // 2.125rem;
+	height: @min-heigh;//2.125rem;
+	position: relative;
+	vertical-align: middle;
+	margin: 0.6rem 0; //.325rem 0;
+	line-height: 1;
+
+}
+
+.input-control[data-role=select] {
+	height: auto;
+}
+
+.input-control {
+    label {
+       /*padding: @padding;
+       color: #000;
+       font-size: 0.8em;
+       height: 100%;
+       line-height: 42px;
+       text-align: right;*/
+    }
+
+    &.select {
+        padding-left: 24px;
+        width: ~"calc(100% - 24px)";
+        .sb-container {
+            position: relative;
+		   border: none;
+            border-bottom: @brd2 @borderColor solid;
+            border-bottom: 1px @borderColor solid;
+		    width: 100%;
+		    height: 100%;
+		    padding: @padding*2 0 0 0;
+            
+            color: @mainColor;
+            transition: all ease-in 0.2s;
+            font-family: @fontName;
+        }
+    }
+
+    &.text, /*&.select,*/ &.file, &.password, &.number, &.email, &.tel {
+        padding-left: 24px;
+            //min-width: 10.875rem;
+        //width: 100%;
+        width: ~"calc(100% - 34px)";
+
+		.button {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 2;
+			margin: 0;
+		}
+
+		& > label, & > .label {
+			position: absolute;
+			left: 0.4rem;
+			top: 0.4rem;
+			font-size: .8rem;
+		}
+
+		& > input:disabled + .button {
+			display: none;
+		}
+
+		.prepend-icon {
+			width: 24px;
+			height: 24px;
+			font-size: 20px;
+			line-height: 1;
+			position: absolute;
+			top: 50%;
+            margin-top: -8px;
+			left: 0;
+            //left: -24px;
+			z-index: 2;
+			color: @mainColor;
+		}
+
+		.prepend-icon ~ input {
+			//padding-left: 20px;
+		}
+	}
+
+	input, textarea, select  {
+		.no-appearance;
+		position: relative;
+		//border: @brd2 solid red;
+        //border-radius: @brd2;
+        border: none;
+        border-bottom: @brd2 @borderColor solid;
+        border-bottom: 1px @borderColor solid;
+		width: 100%;
+		height: 100%;
+		padding: @padding;
+        //padding: .3125rem;
+        font-size: 0.9em;
+		z-index: 0;
+        color: @mainColor;
+        transition: all ease-in 0.2s;
+        font-family: @fontName;
+
+        //Вар1
+        //border-bottom: 2px solid @borderColor;
+       
+   
+
+
+		&:focus {
+			outline: none;
+           
+		}
+
+		&:disabled {
+			background-color: #EBEBE4;
+		}
+	}
+
+    datepicker 
+    {
+        input  {
+		.no-appearance;
+		position: relative;
+		//border: @brd2 solid red;
+        //border-radius: @brd2;
+        border: none;
+        border-bottom: @brd2 @borderColor solid;
+        border-bottom: 1px @borderColor solid;
+		width: 100%;
+		height: 100%;
+		padding: @padding !important;
+        //padding: .3125rem;
+        font-size: 0.9em;
+		z-index: 0;
+        color: @mainColor;
+        transition: all ease-in 0.2s;
+        font-family: @fontName;
+
+        //Вар1
+        //border-bottom: 2px solid @borderColor;
+       
+   
+
+
+		&:focus {
+			outline: none;
+           
+		}
+
+		&:disabled {
+			background-color: #EBEBE4;
+		}
+	} }
+
+
+	input, textarea, select  {
+		&:focus, &:hover {
+			//border-color: @mainColor;
+            color: darken(@mainColor, 10%);
+             border: none;
+             border-bottom: @brd2 @mainColor solid;
+
+             /*.prepend-icon {
+               color: darken(@mainColor, 10%);
+            }*/
+            //Вар1
+            //border-bottom: 2px solid @mainColor;
+		}
+	}
+
+	textarea {
+		position: relative;
+		min-height: 6.25rem;
+		font-family: @fontName;
+	}
+
+	&.textarea {
+		height: auto;
+	}
+
+	&.select {
+		select {
+			padding-right: 20px;
+		}
+
+		position: relative;
+	}
+
+
+	&.rounded {
+		input, textarea, select  {
+			border-radius: @brd5;
+		}
+	}
+
+	&.big-input {
+		height: 4.125rem;
+
+		input {
+			font-size: 1.875rem;
+			padding-left: 1.25rem ;
+		}
+
+		.button {
+			height: 3.25rem;
+			top: 50%;
+			margin-top: -1.625rem;
+			right: 0.3125rem;
+			font-size: 1.125rem;
+			font-weight: bold;
+			padding-left: 1.875rem;
+			padding-right: 1.875rem;
+		}
+	}
+
+    [class*=input-state-] {
+        position: absolute;
+        display: none;
+        top: 50%;
+        right: 8px;
+        z-index: 3;
+        font-size: 1rem;
+        margin-top: -.5rem;
+    }
+
+    /*&.required {
+        input, textarea, select {
+            border: 1px dashed @cyan ;
+        }
+        &.neon {
+            input, textarea, select {
+                .block-shadow-info;
+            }
+        }
+        .input-state-required {
+            display: block;
+            color: @cyan;
+        }
+    }
+	&.error {
+		input, textarea, select {
+            border: 1px solid @red;
+        }
+
+		&.neon {
+			input, textarea, select {
+				.block-shadow-error;
+			}
+		}
+
+        .input-state-error {
+            display: block;
+            color: @red;
+        }
+	}
+	&.warning {
+		input, textarea, select {
+            border: 1px solid @yellow;
+        }
+		&.neon {
+			input, textarea, select {
+				.block-shadow-warning;
+			}
+		}
+        .input-state-warning {
+            display: block;
+            color: @yellow;
+        }
+	}
+	&.success {
+		input, textarea, select {
+            border: 1px solid @green;
+        }
+		&.neon {
+			input, textarea, select {
+				.block-shadow-success;
+			}
+		}
+        .input-state-success {
+            display: block;
+            color: @green;
+        }
+	}
+	&.info {
+		input, textarea, select {
+            border: 1px solid @cyan;
+        }
+		&.neon {
+			input, textarea, select {
+				.block-shadow-info;
+			}
+		}
+        .input-state-success {
+            display: block;
+            color: @cyan;
+        }
+	}*/
+}

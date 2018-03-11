@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div ng-controller="indexController" ng-init="initializeController()">
+    <div class="jumbotron">
+        <h1>Money</h1>
+
+    </div>
+    <div>
+        <h4>Список клиентов</h4>
+        <table class="list-table">
+            <thead>
+                <tr><td>Id</td><td>Name</td><td>Address</td></tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="accountWeb in accountWeb_ar" ng-click="SelectClient(accountWeb)" title="Посмотреть счета клиента">
+                    <td ng-bind="accountWeb.Id">==</td>
+                    <td>{{accountWeb.Name}}</td>
+                    <td>{{accountWeb.Address}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <button class="btn btn-default" ng-click="AddAccount()">
+        Добавить клиента
+    </button>
+
+
+
+
+
+
+    
+
+    <!-- МОДАЛЬНЫЕ ОКНА спрашивать разрешение  -->
+    <ng-include src="modalStandartAccount"></ng-include>
+
+</div>

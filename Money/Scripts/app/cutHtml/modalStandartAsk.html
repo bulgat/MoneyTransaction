@@ -1,0 +1,31 @@
+﻿<!-- МОДАЛЬНЫЕ ОКНА Стандартное модальное окно, для маленьких опросов.-->
+<div id="ModalStandartAsk" class="modal-dialog-confirm full" style="max-height:400px; width:500px;">
+    <div class="modal-header">
+        <h3 ng-bind="ModalStandartHeadAsk">Продолжить размещение.</h3>
+        <a class="icon-button right cancel" ng-click="CloseModal('#ModalStandartAsk')">
+            <i class="mdi-navigation-close material-icons md-18"></i>
+        </a>
+    </div>
+
+    <div class="modal-content" style="height: 384px;">
+
+        <span ng-bind="ModalStandartMessage">? </span>
+        <br>
+        <input ng-model="MoneyInput" type="number" placeholder="кол-во денег"  ng-keydown="$event.which === 13 && ModalStandartAskConfirm(MoneyInput)">
+        <div id="ModalStandartMessage">
+
+        </div>
+    </div>
+
+    <div class="modal-footer">
+
+        <button class="icon-button right cancel" ng-click="CloseModal('#ModalStandartAsk')">
+            <i class="mdi-navigation-close material-icons md-20 left"></i><span ng-bind="ModalStandartAskNameBreak">Прервать</span>
+        </button>
+
+        <button class="icon-button right done" ng-click="CloseModal('#ModalStandartAsk');ModalStandartAskConfirm(MoneyInput);">
+            <i class="mdi-action-done material-icons md-20 left"></i><span ng-bind="ModalStandartAskNameConfirm">Продолжить</span>
+        </button>
+
+    </div>
+</div>

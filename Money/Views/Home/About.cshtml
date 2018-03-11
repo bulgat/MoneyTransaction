@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Перевод денег";
+}
+
+<div ng-controller="aboutController" ng-init="initializeController()">
+    <br>
+    <br>
+    <h2>@ViewBag.Title.</h2>
+    <h4>Id Счета клиента <b>{{MasterCheck.Id}}</b></h4>
+
+    <h4>Имя клиента <b>{{MasterCheck.NameAccount}}</b></h4>
+
+    <h4>Кол-во денег на счету <b>{{MasterCheck.Money}}</b></h4>
+
+    <br />
+    <hr>
+    <h5>Доступные счета</h5>
+    <table class="list-table">
+        <thead>
+            <tr><td>Id</td><td>Name</td><td>Money</td></tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="checkAccountWeb in checkAccountWeb_ar" ng-click="SelectCheck(checkAccountWeb.Id)" title="Перевести деньги клиента на данный счет">
+                <td ng-bind="checkAccountWeb.Id">==</td>
+                <td>{{checkAccountWeb.NameAccount}}</td>
+                <td>{{checkAccountWeb.Money}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- МОДАЛЬНЫЕ ОКНА спрашивать разрешение  -->
+    <ng-include src="modalStandartAsk"></ng-include>
+</div>

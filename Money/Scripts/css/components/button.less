@@ -1,0 +1,162 @@
+﻿/*** 0. НАСТРОЙКИ  ***/
+@primary-color: @white;
+@primary: @grey-900;
+
+@warning-color: @white;
+@warning: @amber-700;
+
+@danger-color: @white;
+@danger: @red-600;
+
+@success-color: @white;
+@success: @light-green-600;
+
+@info-color: @white;
+@info: @blue-700;
+
+@default-color: @grey-900;
+@default: @grey-900;
+
+
+/*** 1.BUTTON ***/
+
+.btn-content {
+    height: inherit;
+    margin-left: 200px;
+    display: block;
+    padding-top: 1em;
+}
+
+
+.btn {
+    //background-color: @headerBackGround;
+    //border: 2px solid @headerBackGround;
+    color: @fontColor;
+    border-radius: @brd2;
+    height: 2em;
+    line-height: 2;
+    margin: 0.25em;
+    padding: 0.3em;
+    text-decoration: none;
+    width: 150px;
+    text-align: center;
+    display: inline-block;
+    transition: all linear 0.2s;
+    .cms-shadow-1dp;
+    &:hover {
+        cursor: pointer;
+        //background-color: @headerBackGround;
+        .cms-shadow-3dp;
+    }
+    &.toggle {
+        background: @grey-600;
+        color: @white;
+        .cms-shadow-3dp;
+    }
+}
+
+
+
+/*** 2.DROPDOWN ***/
+.dropdown-content {
+   .cms-shadow-1dp;
+  background-color: #FFFFFF;
+  margin: 0;
+  //display: none;
+  min-width: 100px;
+  max-height: 650px;
+  overflow-y: auto;
+  //opacity: 0;
+  position: absolute;
+  white-space: nowrap; // Force one line
+  z-index: 1;
+  will-change: width, height;
+
+  li {
+    clear: both;
+   
+    cursor: pointer;
+    line-height: 1.5rem;
+    width: 100%;
+    text-align: left;
+    text-transform: none;
+
+    &:hover, &.active {
+      background-color: #eee;
+    }
+
+    & > a, & > span {
+      font-size: 1.2rem;
+    
+      display: block;
+      padding: 1rem 1rem;
+    }
+  }
+}
+
+
+/*Типы кнопок*/
+.icon-button {
+   margin: 0.25em;
+   text-transform: uppercase;
+   span {
+       line-height: 24px;
+       text-transform: uppercase;
+   }
+   
+
+
+     
+}
+
+.done {
+         color: @success;
+         &:hover  {
+             i, span {
+                 color: lighten(@success, 20%);
+             }
+             color: lighten(@success, 20%);
+         }
+    }
+
+.cancel {
+         color: @danger;
+         &:hover  {
+             i, span {
+                 color: darken(@base-red, 10%);
+             }
+             color: darken(@base-red, 10%);
+         }
+    }
+
+    
+.red {
+         color: @base-red;
+         &:hover  {
+             i, span {
+                 color: darken(@base-red, 10%);
+             }
+             //color: lighten(@base-red, 20%);
+         }
+    }
+
+.white {
+         color: darken(@white, 30%);
+         &:hover  {
+             i {
+                 color: @white;
+             }
+             //color: lighten(@base-red, 20%);
+         }
+    }
+.base {
+     background: @grey-600;
+     color: @white;
+     &:hover  {
+        i, span {
+            color: darken(@base-red, 10%);
+        }
+        background: darken(@grey-600, 20%);
+    }
+    
+}

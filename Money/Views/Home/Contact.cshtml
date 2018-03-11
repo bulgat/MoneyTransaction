@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Счета";
+}
+<div ng-controller="contactController" ng-init="initializeController()">
+    <h2>@ViewBag.Title.</h2>
+    glyphicon-folder-close
+    <i class="mdi-action-done material-icons md-20 left"></i>
+    <div>
+        <h4>Счета</h4>
+        <table class="list-table">
+            <thead>
+                <tr><td>Id</td><td>Name</td><td>Money</td></tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="checkAccountWeb in checkAccountWeb_ar" ng-click="SelectCheck(checkAccountWeb.Id)" title="Перевести деньги с этого счета на другой">
+                    <td ng-bind="checkAccountWeb.Id">==</td>
+                    <td>{{checkAccountWeb.NameAccount}}</td>
+                    <td>{{checkAccountWeb.Money}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button class="btn btn-default" ng-click="AddCheck(AccountId)">
+        Добавить счет
+    </button>
+
+
+    <address>
+
+    </address>
+
+    <!-- МОДАЛЬНЫЕ ОКНА спрашивать разрешение  -->
+    <ng-include src="modalStandartAsk"></ng-include>
+</div>
