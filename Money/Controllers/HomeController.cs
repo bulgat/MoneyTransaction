@@ -99,30 +99,37 @@ namespace Money.Controllers
             List<CneckAccountWeb> checkWeb_ar = null;
             if (AccountId != null)
             {
-                int accontId = Convert.ToInt32(AccountId);
-                string accountName = HomeModel.GetAccountName(_dataClient, accontId);
-           
-                checkWeb_ar = _dataClient.Check.Where(a => a.AccountId == accontId).Select(a => new CneckAccountWeb()
+                if (String.IsNullOrEmpty(AccountId) == false && AccountId!="null")
                 {
-                    Id = a.Id,
-                    NameAccount = accountName,
-                    Money = a.Money
-                }).ToList();
+                    int accontId = Convert.ToInt32(AccountId);
+                    string accountName = HomeModel.GetAccountName(_dataClient, accontId);
+
+                    checkWeb_ar = _dataClient.Check.Where(a => a.AccountId == accontId).Select(a => new CneckAccountWeb()
+                    {
+                        Id = a.Id,
+                        NameAccount = accountName,
+                        Money = a.Money
+                    }).ToList();
+                }
             }
             return Json(checkWeb_ar, JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
         public JsonResult GetCneckOne(string CheckId)
         {
-            int checkId = Convert.ToInt32(CheckId);
-            Check check = _dataClient.Check.FirstOrDefault(a => a.Id == checkId);
-            string accountName = HomeModel.GetAccountName(_dataClient, (int)check.AccountId);
-            CneckAccountWeb checkAccountWeb = new CneckAccountWeb() {
-                Id = check.Id,
-                NameAccount = accountName,
-                Money = check.Money
-            };
-
+            CneckAccountWeb checkAccountWeb = null;
+            if (String.IsNullOrEmpty(CheckId) == false && CheckId!="null")
+            {
+                int checkId = Convert.ToInt32(CheckId);
+                Check check = _dataClient.Check.FirstOrDefault(a => a.Id == checkId);
+                string accountName = HomeModel.GetAccountName(_dataClient, (int)check.AccountId);
+                checkAccountWeb = new CneckAccountWeb()
+                {
+                    Id = check.Id,
+                    NameAccount = accountName,
+                    Money = check.Money
+                };
+            }
             return Json(checkAccountWeb, JsonRequestBehavior.AllowGet);
         }
     [HttpGet]
