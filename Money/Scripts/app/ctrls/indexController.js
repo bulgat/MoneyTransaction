@@ -40,16 +40,18 @@
         $scope.GetAllPromise = function () {
 
 
-            var p1 = new Promise((resolve, reject) => {
-                //setTimeout(resolve, 1000, "one");
-                $scope.GetNameСity(resolve);
-            });
-
+            var p1 = $.ajax({ url: '/Home/GetNameСity', method: 'GET' })
+            var p2 = $.ajax({ url: '/Home/GetNameRegion', method: 'GET' })
+            var p3 = $.ajax({ url: '/Home/GetNameCountry', method: 'GET' })
 
             console.log(reportService.GetName + "==i Controller==" + reportService.GetNameСity);
 
-            Promise.all([$scope.GetNameСity]).then(values => {
-                console.log("values = "+values);
+            Promise.all([p1,p2,p3]).then(values => {
+                console.log("values = " + values);
+                $scope.regionTransaction = {};
+                $scope.regionTransaction.City = values[0];
+                $scope.regionTransaction.Region = values[1];
+                $scope.regionTransaction.Country = values[2];
             }, reason => {
                 console.log("reason = " +reason)
             });

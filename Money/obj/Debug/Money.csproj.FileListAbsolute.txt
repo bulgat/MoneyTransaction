@@ -213,3 +213,4 @@ C:\Users\bulga\Documents\GitHub\MoneyTransaction\Money\obj\Debug\Money.csproj.Co
 C:\Users\bulga\Documents\GitHub\MoneyTransaction\Money\obj\Debug\Money.csproj.CopyComplete
 C:\Users\bulga\Documents\GitHub\MoneyTransaction\Money\obj\Debug\Money.dll
 C:\Users\bulga\Documents\GitHub\MoneyTransaction\Money\obj\Debug\Money.pdb
+C:\Users\bulga\Documents\GitHub\MoneyTransaction\Money\obj\Debug\Money.csproj.AssemblyReference.cache

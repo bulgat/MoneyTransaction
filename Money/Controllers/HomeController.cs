@@ -22,11 +22,20 @@ namespace Money.Controllers
         [HttpGet]
         public JsonResult GetNameСity(string authtoken)
         {
-            return Json("Moscow", JsonRequestBehavior.AllowGet);
+            return Json("Москва", JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        public JsonResult GetNameRegion(string authtoken)
+        {
+            return Json("Московская обл.", JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        public JsonResult GetNameCountry(string authtoken)
+        {
+            return Json("Россия", JsonRequestBehavior.AllowGet);
         }
 
-
-           [HttpGet]
+        [HttpGet]
         public JsonResult GetName(string authtoken)
         {
            List<AccountWeb> accountWeb_ar = _dataClient.Account.Select(a=>new AccountWeb() {
