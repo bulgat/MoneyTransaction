@@ -263,6 +263,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\css\cms.less" />
     <Content Include="Scripts\css\fonts\mdi\Material-Design-Icons.svg" />
+    <Content Include="Scripts\IndexTest.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

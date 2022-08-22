@@ -6,7 +6,7 @@
         $scope.SlaveCheckId;
 
         $scope.initializeController = function () {
-
+            
             $scope.CheckId = utilService.GetParameterByName("CheckId");
            
 
@@ -58,7 +58,12 @@
 
 
         }
+
+
         $scope.CloseModal = function (name) {
             utilService.closeModal(name);
+        }
+        $scope.ResponceError = function (name) {
+            console.log("==ResponceError   Controller==" + name);
         }
     }]);

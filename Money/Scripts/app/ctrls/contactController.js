@@ -6,7 +6,7 @@
         $scope.MoneyInput = 0;
 
         $scope.initializeController = function () {
-
+           
             $scope.AccountId = utilService.GetParameterByName("AccountId");
        
             reportService.GetCneckAccount($scope.AccountId, function (response, status) {

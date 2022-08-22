@@ -20,6 +20,13 @@ namespace Money.Controllers
         }
 
         [HttpGet]
+        public JsonResult GetNameСity(string authtoken)
+        {
+            return Json("Moscow", JsonRequestBehavior.AllowGet);
+        }
+
+
+           [HttpGet]
         public JsonResult GetName(string authtoken)
         {
            List<AccountWeb> accountWeb_ar = _dataClient.Account.Select(a=>new AccountWeb() {

@@ -24,10 +24,11 @@
         this.TransferCheckAccount = function (model, successFunction, errorFunction) {
             ajaxService.AjaxPost(model,"/Home/TransferCheckAccount", successFunction, errorFunction);
         };
-
-
         this.GetName = function (successFunction, errorFunction) {
             ajaxService.AjaxGet("/Home/GetName", successFunction, errorFunction);
+        };
+        this.GetNameСity = function (successFunction, errorFunction) {
+            ajaxService.AjaxGet("/Home/GetNameСity", successFunction, errorFunction);
         };
         this.GetClient = function (Procuratory, successFunction, errorFunction) {
             ajaxService.AjaxPost(Procuratory, "/Home/GetClient", successFunction, errorFunction);

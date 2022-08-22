@@ -6,7 +6,7 @@
 
         $scope.initializeController = function () {
 
-            
+            console.log("==transactionController==");
             reportService.GetAllTransaction( function (response, status) {
 
 //alert("gd==      f ");
