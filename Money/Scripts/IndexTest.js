@@ -1,4 +1,18 @@
-﻿console.log("  Test  ")
+﻿console.log("  Test  ");
+
+
+function LoadScript(src, callback) {
+    let script = document.createElement("script");
+    script.src = src;
+    script.onload = () => { callback(script) }
+    document.head.append(script);
+}
+
+LoadScript("/Scripts/IndexFront.js", function () {
+    console.log("init--------");
+    Front();
+});
+
 
 /*
 var xhr = new XMLHttpRequest();

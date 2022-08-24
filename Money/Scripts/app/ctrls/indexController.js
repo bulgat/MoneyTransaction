@@ -19,7 +19,7 @@
 
             reportService.GetName(function (response, status) {
 
-                console.log("==$scope.accountWeb_ar==" + $scope.accountWeb_ar);
+                
 
                // $scope.ViewExcelStatistic = response;
                 $scope.accountWeb_ar = response;
