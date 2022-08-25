@@ -9,10 +9,17 @@ function LoadScript(src, callback) {
 }
 
 LoadScript("/Scripts/IndexFront.js", function () {
-    console.log("init--------");
+    
     Front();
 });
 
+// 
+fetch('/Home/GetNameСity')
+    .then((response) => {
+        console.log("i    response ---" + response);
+
+
+    });
 
 /*
 var xhr = new XMLHttpRequest();
