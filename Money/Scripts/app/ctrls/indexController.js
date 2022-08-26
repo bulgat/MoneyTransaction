@@ -44,7 +44,7 @@
             var p2 = $.ajax({ url: '/Home/GetNameRegion', method: 'GET' })
             var p3 = $.ajax({ url: '/Home/GetNameCountry', method: 'GET' })
 
-            console.log(reportService.GetName + "==i Controller==" + reportService.GetNameСity);
+           
 
             Promise.all([p1,p2,p3]).then(values => {
                 console.log("values = " + values);

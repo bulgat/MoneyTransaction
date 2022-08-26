@@ -21,6 +21,22 @@ fetch('/Home/GetNameСity')
 
     });
 
+const promise1 = fetch('/Home/GetNameBank');
+const promise2 = fetch('/Home/GetNameBankStreet');
+
+Promise.allSettled([promise1, promise1]).
+    then(
+        (results) => results.forEach((result) => {
+
+
+            console.log("   " + result.statusText + "    ** value =    " + result.value);
+            var t = JSON.stringify(result.value);
+            console.log("******* = " + result.status + "     " + result.status + "  +++ " + t);
+        })
+    );
+
+
+
 /*
 var xhr = new XMLHttpRequest();
 

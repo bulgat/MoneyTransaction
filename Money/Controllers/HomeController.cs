@@ -34,6 +34,16 @@ namespace Money.Controllers
         {
             return Json("Россия", JsonRequestBehavior.AllowGet);
         }
+        [HttpGet]
+        public JsonResult GetNameBank(string authtoken)
+        {
+            return Json("Московский Банк", JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        public JsonResult GetNameBankStreet(string authtoken)
+        {
+            return Json("ул. Петровка", JsonRequestBehavior.AllowGet);
+        }
 
         [HttpGet]
         public JsonResult GetName(string authtoken)
