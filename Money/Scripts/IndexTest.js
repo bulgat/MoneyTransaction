@@ -16,7 +16,7 @@ LoadScript("/Scripts/IndexFront.js", function () {
 // 
 fetch('/Home/GetNameСity')
     .then((response) => {
-        console.log("i    response ---" + response);
+        
 
 
     });
@@ -29,23 +29,46 @@ Promise.allSettled([promise1, promise1]).
         (results) => results.forEach((result) => {
 
 
-            console.log("   " + result.statusText + "    ** value =    " + result.value);
+            
             var t = JSON.stringify(result.value);
             console.log("******* = " + result.status + "     " + result.status + "  +++ " + t);
         })
     );
 
+Promise.race([promise1, promise2])
+    .then(response => {
+
+        response.json().then(data => {
+            console.log('===qqqdata', data);
+            var bank = document.querySelector("#bank");
+            bank.textContent = data;
+            //bank
+        })
+    })
+    .catch(function (error) {
+        console.log('error', error)
+    });
+
+var promise = new Promise(function (resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/Home/GetNameBankStreet');
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            resolve(xhr.response);
+        } else {
+            reject(Error(xhr.statusText));
+        }
+    };
+    xhr.onerror = function () {
+        reject(Error('error fetching JSON data'));
+    };
+    xhr.send();
+});
 
 
-/*
-var xhr = new XMLHttpRequest();
+promise.then(function (data) {
+    console.log("ttttttttttttttt"+JSON.parse(data));
+}, function (error) {
+    console.log(error);
+});
 
-var body = 'name=' + "kol";
-
-xhr.open("Get", 'GetNameСity', true);
-xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-//xhr.onreadystatechange = ...;
-
-xhr.send(body);
-*/
