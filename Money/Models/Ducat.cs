@@ -8,5 +8,9 @@ namespace Money.Models
 {
     public class Ducat: Coin
     {
+        public Ducat(string name):base(name) { 
+  
+            //base.Name = name;
+        }
     }
 }

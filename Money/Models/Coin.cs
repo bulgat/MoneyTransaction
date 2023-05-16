@@ -8,6 +8,9 @@ namespace Money.Models
 {
     public class Coin
     {
-        public string Name;
+        public Coin(string name) {
+            this.Name = name;
+        }
+        public string Name { set; get; }
     }
 }

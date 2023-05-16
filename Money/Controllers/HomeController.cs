@@ -27,12 +27,11 @@ namespace Money.Controllers
         [HttpGet]
         public JsonResult GetNameRegion(string authtoken)
         {
-            Coin kol = new Coin();
-            kol.Name = "STOP";
+            Coin kol = new Coin("STOP");
             var name = kol?.Name;
             Coin stop = null;
             Coin stop0 = null;
-            var test = stop ?? new Ducat();
+            var test = stop ?? new Ducat("");
             //stop ??= new Coin();
             //_ = stop ?? throw new Exception("STOP");
             object stopKrik = null;
@@ -48,16 +47,37 @@ namespace Money.Controllers
             {
                 System.Diagnostics.Debug.WriteLine("03 GetName null =  "  );
             }
+            /*
             if (stopKrik is not null)
             {
                 System.Diagnostics.Debug.WriteLine("04 Get not null =  ");
             }
+*/
+            /*
             if (stop0 is not object)
             {
                 System.Diagnostics.Debug.WriteLine("06 Get  null =  ");
             }
-            System.Diagnostics.Debug.WriteLine("07 GetNameRegion    name " + name);
-            System.Diagnostics.Debug.WriteLine("08 GetName     name " + test);
+            */
+            
+            stopKrik = "tttttttt";
+            stopKrik = new Coin("STOP");
+      
+            switch (stopKrik)
+            {
+                case string s:
+                    {
+                        System.Diagnostics.Debug.WriteLine("07 Ge  =  " + s);
+                    }
+                    break;
+                case Coin kol0 when kol0.Name == "STOP":
+                    {
+                        System.Diagnostics.Debug.WriteLine("08 Ge  =  " + kol0);
+                    }
+                    break;
+            }
+            System.Diagnostics.Debug.WriteLine("09 GetNameRegion    name " + name);
+            System.Diagnostics.Debug.WriteLine("10 GetName     name " + test);
 
             return Json("Московская обл.", JsonRequestBehavior.AllowGet);
         }
