@@ -27,6 +27,23 @@ namespace Money.Controllers
         [HttpGet]
         public JsonResult GetNameRegion(string authtoken)
         {
+            Coin kol = new Coin();
+            kol.Name = "STOP";
+            var name = kol?.Name;
+            Coin stop = null;
+            var test = stop ?? new Ducat();
+            //stop ??= new Coin();
+            //_ = stop ?? throw new Exception("STOP");
+            Coin stopKrik = null;
+
+            if (stopKrik is Coin ts)
+            {
+                System.Diagnostics.Debug.WriteLine("GetNameRegion  ts =  " + ts);
+            }
+
+            System.Diagnostics.Debug.WriteLine("GetNameRegion    name " + name);
+            System.Diagnostics.Debug.WriteLine("0000 GetName     name " + test);
+
             return Json("Московская обл.", JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
