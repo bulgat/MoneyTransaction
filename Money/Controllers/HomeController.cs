@@ -31,18 +31,33 @@ namespace Money.Controllers
             kol.Name = "STOP";
             var name = kol?.Name;
             Coin stop = null;
+            Coin stop0 = null;
             var test = stop ?? new Ducat();
             //stop ??= new Coin();
             //_ = stop ?? throw new Exception("STOP");
-            Coin stopKrik = null;
+            object stopKrik = null;
 
             if (stopKrik is Coin ts)
             {
-                System.Diagnostics.Debug.WriteLine("GetNameRegion  ts =  " + ts);
+                System.Diagnostics.Debug.WriteLine("01 GetNameRegion  ts =  " + ts);
             }
-
-            System.Diagnostics.Debug.WriteLine("GetNameRegion    name " + name);
-            System.Diagnostics.Debug.WriteLine("0000 GetName     name " + test);
+            if (stopKrik is int num) {
+                System.Diagnostics.Debug.WriteLine("02 GetNameRegion  num =  " + num);
+            }
+            if (stopKrik is null)
+            {
+                System.Diagnostics.Debug.WriteLine("03 GetName null =  "  );
+            }
+            if (stopKrik is not null)
+            {
+                System.Diagnostics.Debug.WriteLine("04 Get not null =  ");
+            }
+            if (stop0 is not object)
+            {
+                System.Diagnostics.Debug.WriteLine("06 Get  null =  ");
+            }
+            System.Diagnostics.Debug.WriteLine("07 GetNameRegion    name " + name);
+            System.Diagnostics.Debug.WriteLine("08 GetName     name " + test);
 
             return Json("Московская обл.", JsonRequestBehavior.AllowGet);
         }
