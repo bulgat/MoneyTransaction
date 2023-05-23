@@ -50,7 +50,7 @@ namespace Money.Controllers
             /*
             if (stopKrik is not null)
             {
-                System.Diagnostics.Debug.WriteLine("04 Get not null =  ");
+                
             }
 */
             /*
@@ -76,8 +76,8 @@ namespace Money.Controllers
                     }
                     break;
             }
-            System.Diagnostics.Debug.WriteLine("09 GetNameRegion    name " + name);
-            System.Diagnostics.Debug.WriteLine("10 GetName     name " + test);
+            
+            
             
            
 
