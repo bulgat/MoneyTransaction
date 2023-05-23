@@ -8,9 +8,16 @@ namespace Money.Models
 {
     public class Coin
     {
-        public Coin(string name) {
+        public int Price;
+        public string Name { set; get; } ="Coin";
+        public int Cost
+        {
+            get { return this.Price; }
+            set { this.Price = value; }
+        }
+        public Coin(string name="CoinBig") {
             this.Name = name;
         }
-        public string Name { set; get; }
+        
     }
 }

@@ -78,12 +78,19 @@ namespace Money.Controllers
             }
             System.Diagnostics.Debug.WriteLine("09 GetNameRegion    name " + name);
             System.Diagnostics.Debug.WriteLine("10 GetName     name " + test);
+            
+           
 
+            
+            
             return Json("Московская обл.", JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
         public JsonResult GetNameCountry(string authtoken)
         {
+
+
+
             return Json("Россия", JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
